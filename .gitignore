@@ -1,6 +1,7 @@
+# DVC-managed model
 /model.pkl
 
-# Virtual environments
+# Python virtual environments
 .venv/
 venv/
 env/
@@ -13,7 +14,7 @@ __pycache__/
 # IDE settings
 .vscode/
 
-# Logs
+# Log files
 *.log
 
 # DVC cache
