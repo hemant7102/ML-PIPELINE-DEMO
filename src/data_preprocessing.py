@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-
 import os
 
 import re
@@ -44,13 +43,16 @@ def lower_case(text):
     return " " .join(text)
 
 def removing_punctuations(text):
-    ## Remove punctuations
-    text = re.sub('[%s]' % re.escape("""!"#$%&'()*+,،-./:;<=>؟?@[\]^_`{|}~"""), ' ', text)
-    text = text.replace('؛',"", )
+    # Define punctuation characters
+    punctuation = string.punctuation + "،؟"
 
-    ## remove extra whitespace
-    text = re.sub('\s+', ' ', text)
-    text =  " ".join(text.split())
+    # Remove punctuation
+    text = re.sub(r'[%s]' % re.escape(punctuation), ' ', text)
+
+    # Remove extra whitespace
+    text = re.sub(r'\s+', ' ', text)
+    text = " ".join(text.split())
+
     return text.strip()
 
 def removing_urls(text):
